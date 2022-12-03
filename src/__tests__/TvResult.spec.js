@@ -28,4 +28,17 @@ describe("TvResult", async () => {
 
     expect(wrapper.find("li").exists()).toBeTruthy();
   });
+
+  it("Test if filteredList array props is emptyqzq", () => {
+    let wrapper = mount(TvResult, {
+      props: {
+        filteredList: [],
+      },
+      global: {
+        stubs: ["router-link", "router-view", "vue3-star-ratings"],
+      },
+    });
+
+    expect(wrapper.find("li").exists()).toBeFalsy();
+  });
 });

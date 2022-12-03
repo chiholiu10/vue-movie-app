@@ -20,11 +20,11 @@ const updateValue = (value) => emit("update:searchTitle", value);
 
 <style scoped lang="scss">
 input {
-  border: 1px solid lightgrey;
+  border: 1px solid $lightgrey;
   padding: 10px;
   &:focus-visible {
     outline: none;
-    border: 1px solid dodgerblue;
+    border: 1px solid $blue;
   }
 }
 </style>
