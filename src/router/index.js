@@ -8,5 +8,9 @@ export const router = createRouter({
       path: "/",
       component: HomeView,
     },
+    {
+      path: "/show/:id",
+      component: () => import("../views/DetailView.vue"),
+    },
   ],
 });
