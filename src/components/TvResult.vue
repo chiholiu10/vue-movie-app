@@ -63,13 +63,11 @@ li {
     word-break: break-word;
   }
   .tv-list-anchor {
-    background-color: black;
-    color: white;
-    /* width: 200px; */
+    background-color: $black;
+    color: $white;
     display: block;
-    /* padding: 20px; */
     &:hover {
-      color: white;
+      color: $white;
     }
   }
 }

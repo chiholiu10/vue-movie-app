@@ -47,7 +47,7 @@ label {
   margin: 5px;
   box-sizing: border-box;
   display: flex;
-  @media screen and (min-width: 767px) {
+  @include md {
     flex: 1 0 21%;
   }
 }
@@ -59,7 +59,7 @@ h2 {
 [type="checkbox"] {
   width: 15px;
   height: 15px;
-  color: dodgerblue;
+  color: $blue;
   vertical-align: middle;
   -webkit-appearance: none;
   background: none;
@@ -67,7 +67,7 @@ h2 {
   outline: 0;
   flex-grow: 0;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: $white;
   transition: background 300ms;
   cursor: pointer;
 }
@@ -83,7 +83,7 @@ h2 {
   border: 0;
   background-color: transparent;
   background-size: contain;
-  box-shadow: inset 0 0 0 1px #ccd3d8;
+  box-shadow: inset 0 0 0 1px $lightgrey;
 }
 
 /* Checked */
@@ -97,7 +97,7 @@ h2 {
 
 /* Disabled */
 [type="checkbox"]:disabled {
-  background-color: #ccd3d8;
+  background-color: $lightgrey;
   opacity: 0.84;
   cursor: not-allowed;
 }
@@ -113,7 +113,7 @@ h2 {
   border: 0;
   background-color: transparent;
   background-size: contain;
-  box-shadow: inset 0 0 0 1px #ccd3d8;
+  box-shadow: inset 0 0 0 1px $lightgrey;
 }
 
 [type="checkbox"]:checked::-ms-check {

@@ -31,6 +31,7 @@ const updateValue = (value) => {
           @input="updateValue($event.target.value)"
         />
         <vue3-star-ratings
+          class="chiho"
           :numberOfStars="option.ratingStars"
           inactiveColor="#ff9800"
           :showControl="false"

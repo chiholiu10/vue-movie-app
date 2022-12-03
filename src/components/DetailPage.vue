@@ -58,7 +58,7 @@ onMounted(async () => {
   max-width: 120px;
   display: inline-flex;
   border-radius: 50px;
-  background-color: dodgerblue;
+  background-color: $blue;
   margin: 0 10px;
   font-weight: 600;
 }
@@ -76,9 +76,9 @@ onMounted(async () => {
   font-size: 30px;
   font-weight: 700;
   border-radius: 50%;
-  background-color: yellow;
+  background-color: $yellow;
   width: 70px;
-  color: black;
+  color: $black;
   height: 70px;
   display: flex;
   justify-content: center;
@@ -100,7 +100,7 @@ p {
 }
 .two-columns-desktop {
   display: block;
-  @media screen and (min-width: 768px) {
+  @include md {
     display: inline-flex;
     flex-direction: row;
   }
