@@ -1,10 +1,13 @@
 <script setup>
+import SearchInput from "./SearchInput.vue";
 import GenreCheckboxes from "./GenreCheckboxes.vue";
+import TvResult from "./TvResult.vue";
 import SelectRating from "./SelectRating.vue";
 import { ref, computed } from "vue";
 
 const selectedGenres = ref([]);
 const fullList = ref([]);
+const searchTitle = ref("");
 const selectedRating = ref(null);
 
 const ratings = [
@@ -33,8 +36,7 @@ const filteredList = computed(() => {
   if (
     !selectedGenres.value.length &&
     !selectedRating.value &&
-    !searchTitle.value.length &&
-    !selectedLanguage.length
+    !searchTitle.value.length
   )
     return fullList.value;
   return fullList.value
@@ -52,6 +54,11 @@ const filteredList = computed(() => {
     .filter((item) => {
       if (!selectedRating.value) return true;
       return item.rating.average >= selectedRating.value * 2;
+    })
+    .filter((item) => {
+      if (!searchTitle.value) return true;
+
+      return item.name.toLowerCase().includes(searchTitle.value.toLowerCase());
     });
 });
 </script>
@@ -60,6 +67,8 @@ const filteredList = computed(() => {
   <div class="main-container">
     <GenreCheckboxes :genres="genres" v-model:selectedGenres="selectedGenres" />
     <SelectRating :ratings="ratings" v-model:selectedRating="selectedRating" />
+    <SearchInput v-model:searchTitle="searchTitle" />
+    <TvResult headingTitle="hello world" :filteredList="filteredList" />
   </div>
 </template>
 
