@@ -1,9 +1,18 @@
 <script setup>
 import GenreCheckboxes from "./GenreCheckboxes.vue";
+import SelectRating from "./SelectRating.vue";
 import { ref, computed } from "vue";
 
 const selectedGenres = ref([]);
 const fullList = ref([]);
+const selectedRating = ref(null);
+
+const ratings = [
+  { id: 1, ratingStars: 1 },
+  { id: 2, ratingStars: 2 },
+  { id: 3, ratingStars: 3 },
+  { id: 4, ratingStars: 4 },
+];
 
 fetch("https://api.tvmaze.com/shows")
   .then((response) => response.json())
@@ -28,23 +37,29 @@ const filteredList = computed(() => {
     !selectedLanguage.length
   )
     return fullList.value;
-  return fullList.value.filter((item) => {
-    if (!selectedGenres.value.length) return true;
-    let isInGenres = false;
-    for (let genre of item.genres) {
-      isInGenres = selectedGenres.value.includes(genre);
-      if (isInGenres) {
-        break;
+  return fullList.value
+    .filter((item) => {
+      if (!selectedGenres.value.length) return true;
+      let isInGenres = false;
+      for (let genre of item.genres) {
+        isInGenres = selectedGenres.value.includes(genre);
+        if (isInGenres) {
+          break;
+        }
       }
-    }
-    return isInGenres;
-  });
+      return isInGenres;
+    })
+    .filter((item) => {
+      if (!selectedRating.value) return true;
+      return item.rating.average >= selectedRating.value * 2;
+    });
 });
 </script>
 
 <template>
   <div class="main-container">
     <GenreCheckboxes :genres="genres" v-model:selectedGenres="selectedGenres" />
+    <SelectRating :ratings="ratings" v-model:selectedRating="selectedRating" />
   </div>
 </template>
 
