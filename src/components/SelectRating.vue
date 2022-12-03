@@ -3,7 +3,7 @@ import vue3StarRatings from "vue3-star-ratings";
 defineProps({
   ratings: {
     type: Array,
-    default: [],
+    default: () => [],
   },
   selectedRating: {
     type: Number,

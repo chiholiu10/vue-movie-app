@@ -1,5 +1,4 @@
 <script setup>
-import vue3StarRatings from "vue3-star-ratings";
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
