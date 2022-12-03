@@ -3,12 +3,10 @@ defineProps({
   genres: {
     type: Array,
     default: () => [],
-    required: true,
   },
   selectedGenres: {
     type: Array,
     default: () => [],
-    required: true,
   },
   headingTitle: {
     type: String,
