@@ -2,12 +2,12 @@
 defineProps({
   genres: {
     type: Array,
-    default: [],
+    default: () => [],
     required: true,
   },
   selectedGenres: {
     type: Array,
-    default: [],
+    default: () => [],
     required: true,
   },
   headingTitle: {

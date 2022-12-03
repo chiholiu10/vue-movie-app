@@ -2,7 +2,7 @@
 defineProps({
   filteredList: {
     type: Array,
-    default: [],
+    default: () => [],
   },
   headingTitle: {
     type: String,
