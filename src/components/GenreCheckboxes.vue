@@ -1,5 +1,5 @@
 <script setup>
-defineProps({
+const props = defineProps({
   genres: {
     type: Array,
     default: () => [],
@@ -16,14 +16,24 @@ defineProps({
 });
 
 const emit = defineEmits(["update:selectedGenres"]);
-const updateValue = (value) => emit("update:selectedGenres", value);
+const updateValue = (value) => {
+  let selectedGenresCopy = [...props.selectedGenres];
+  const index = selectedGenresCopy.indexOf(value);
+  console.log(index);
+  if (index !== -1) {
+    selectedGenresCopy.splice(index, 1);
+  } else {
+    selectedGenresCopy.push(value);
+  }
+  emit("update:selectedGenres", selectedGenresCopy);
+};
 </script>
 
 <template>
   <div>
     <h2>{{ headingTitle }}</h2>
     <div class="genre-checkbox-container">
-      <label v-for="option in genres" :key="option.id">
+      <label v-for="(option, index) in genres" :key="index">
         <input
           type="checkbox"
           :value="option"
@@ -43,10 +53,18 @@ const updateValue = (value) => emit("update:selectedGenres", value);
   margin-top: 20px;
 }
 label {
-  flex: 1 0 33%;
+  flex: 1 0 30%;
   margin: 5px;
+  font-size: 14px;
   box-sizing: border-box;
   display: flex;
+  align-items: center;
+  input {
+    margin-right: 5px;
+    @include md {
+      margin-right: 10px;
+    }
+  }
   @include md {
     flex: 1 0 21%;
   }
