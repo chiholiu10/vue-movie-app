@@ -67,7 +67,9 @@ const filteredList = computed(() => {
   <div class="main-container">
     <GenreCheckboxes :genres="genres" v-model:selectedGenres="selectedGenres" />
     <SelectRating :ratings="ratings" v-model:selectedRating="selectedRating" />
-    <SearchInput v-model:searchTitle="searchTitle" />
+    <div class="search-input-container">
+      <SearchInput v-model:searchTitle="searchTitle" />
+    </div>
     <TvResult headingTitle="Movies" :filteredList="filteredList" />
   </div>
 </template>
@@ -75,5 +77,15 @@ const filteredList = computed(() => {
 <style scoped lang="scss">
 .main-container {
   width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  min-height: 100vh;
+  .search-input-container {
+    @include md {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 </style>
