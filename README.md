@@ -72,12 +72,12 @@ Is a blazing fast unit test framework powered by Vite.
 
 - npm run lint
 
-[x] Use any frameworks of your choice
-[x] Application must be responsive and mobile friendly
-[x] Please keep it to a minimum in leveraging/using scaffolding tools/boilerplate
+- [x] Use any frameworks of your choice
+- [x] Application must be responsive and mobile friendly
+- [x] Please keep it to a minimum in leveraging/using scaffolding tools/boilerplate
 templates/plugins. We don’t expect you to create things from scratch but, we also
 would like to see your own creation
-[x] Please create a readme file that explains your architectural decisions (E.G. why did
+- [x] Please create a readme file that explains your architectural decisions (E.G. why did
 you choose a specific framework) and make sure you include instructions on how to run your solution
-[x] Please make sure that UI is simple yet eye-catching
-[x] Please include unit tests (Jest testing)
+- [x] Please make sure that UI is simple yet eye-catching
+- [x] Please include unit tests (Jest testing)
