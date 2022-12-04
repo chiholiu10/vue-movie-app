@@ -9,7 +9,6 @@ describe("S", async () => {
         searchTitle: "SearchInput",
       },
     });
-    console.log("chiho" + wrapper);
     expect(wrapper.text()).toBe("SearchInput");
   });
 });

@@ -43,7 +43,9 @@ onMounted(async () => {
         </div>
       </div>
     </div>
-    <div v-else>No movie found</div>
+    <div v-else>
+      <NoResult />
+    </div>
   </div>
 </template>
 
