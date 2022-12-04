@@ -8,7 +8,7 @@ Official utility library for Vue.js. It allows you to mount a component without 
 
 ### Eslint
 
-makes code style consistent, avoid errors and improve code quality.
+Makes code style consistent, avoids errors, and improves code quality.
 
 ### Eslint-plugin-vue
 
@@ -24,15 +24,15 @@ Which helps the developer to remove all weird padding spaces and so on. This hel
 
 ### Husky
 
-Which lint stuff to check if there are errors before commiting.
+Linting stuff to check if there are errors before commiting.
 
 ### Linter
 
-To check all the errors and create consistency in stuff like indentation
+To check all the errors and create consistency in stuff like indentation.
 
 ### Prettier
 
-The biggest benefit for Prettier for us was being able to format the entire code base at once
+The biggest benefit for Prettier for us was being able to format the entire code base at once.
 
 ### SASS
 
@@ -50,27 +50,27 @@ Is a blazing fast unit test framework powered by Vite.
 
 ### How to clone locally
 
-Git clone https://github.com/chiholiu10/vue-movie-app.git
+- Git clone https://github.com/chiholiu10/vue-movie-app.git
 
 ### How to install
 
-npm i or npm install
+- npm i or npm install
 
 ### How to run the app
 
-npm run dev
+- npm run dev
 
-#### How to run test
+### How to run test
 
-npm run test
+- npm run test
 
-#### How to build
+### How to build
 
-npm run build
+- npm run build
 
-#### How to run linter
+### How to run linter
 
-npm run lint
+- npm run lint
 
 [x] Use any frameworks of your choice
 [x] Application must be responsive and mobile friendly
