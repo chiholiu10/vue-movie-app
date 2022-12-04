@@ -1,6 +1,7 @@
 <script setup>
 import NoResult from "./NoResult.vue";
 import vue3StarRatings from "vue3-star-ratings";
+
 defineProps({
   filteredList: {
     type: Array,
@@ -77,6 +78,11 @@ defineProps({
         background-color: $black;
         color: $white;
         display: block;
+        .vue3-star-ratings__wrapper {
+          padding: 0 0 10px;
+          margin: 0;
+        }
+
         &:hover {
           color: $white;
         }
