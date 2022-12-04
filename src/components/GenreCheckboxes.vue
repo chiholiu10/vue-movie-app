@@ -19,7 +19,7 @@ const emit = defineEmits(["update:selectedGenres"]);
 const updateValue = (value) => {
   let selectedGenresCopy = [...props.selectedGenres];
   const index = selectedGenresCopy.indexOf(value);
-  console.log(index);
+
   if (index !== -1) {
     selectedGenresCopy.splice(index, 1);
   } else {
