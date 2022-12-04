@@ -21,7 +21,11 @@ const updateValue = (value) => {
 
 <template>
   <div class="star-rating-component">
-    <div v-for="(option, index) in ratings" :key="index">
+    <div
+      v-for="(option, index) in ratings"
+      :key="index"
+      class="star-rating-block"
+    >
       <label :class="'label' + index">
         <input
           type="radio"
@@ -58,6 +62,24 @@ label {
 }
 .star-rating-component {
   display: flex;
-  margin: 0 20px;
+  flex-direction: column;
+  margin-top: 20px;
+  @include md {
+    flex-direction: row;
+  }
+  .star-rating-block {
+    width: 100%;
+    margin: 5px 0;
+    @include md {
+      width: auto;
+      padding: 0 20px;
+    }
+    display: flex;
+
+    label {
+      margin: 0;
+      padding: 0;
+    }
+  }
 }
 </style>
