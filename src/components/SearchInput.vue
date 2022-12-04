@@ -11,7 +11,7 @@ const updateValue = (value) => emit("update:searchTitle", value);
 
 <template>
   <input
-    type="text"
+    type="search"
     placeholder="Name"
     :value="searchTitle"
     v-on:input="updateValue($event.target.value)"
@@ -22,6 +22,9 @@ const updateValue = (value) => emit("update:searchTitle", value);
 input {
   border: 1px solid $lightgrey;
   padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0;
   &:focus-visible {
     outline: none;
     border: 1px solid $blue;
